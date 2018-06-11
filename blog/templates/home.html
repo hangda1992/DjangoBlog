@@ -1,5 +1,6 @@
 {% extends "homebase.html" %}
 {% block div1 %}
+    <div style="min-height: 20px"></div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -28,5 +29,21 @@
     </div>
 {% endblock %}
 {% block div2 %}
-    <img src="../static/img/5.jpg" style="width: 200px">
+    <div style="min-height: 20px"></div>
+    <div style="width:350px;">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                python 基础
+                <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                python web
+                <span class="badge badge-primary badge-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Linux 知识
+                <span class="badge badge-primary badge-pill">1</span>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
