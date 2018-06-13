@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    # 'bootstrap_admin',
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'markdownx',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ STATICFILES_DIRS = (
     (os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
     (os.path.join(STATIC_ROOT, 'img').replace('\\', '/')),
 )
+
+# markdown
+MARKDOWNX_EDITOR_RESIZABLE = True

@@ -17,6 +17,6 @@ from django.conf.urls import url, include
 from blog import views
 
 urlpatterns = [
-
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^blog/', include('apps_project.blog.urls'))
 ]
