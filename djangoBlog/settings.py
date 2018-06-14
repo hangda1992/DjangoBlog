@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap_admin',
+    # 'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'markdownx',
+    # 'markdownx',
+    'mdeditor'
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,11 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+# 媒体文件路径配置
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
 
+# 静态文件配置
 STATIC_URL = '/blog/home/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'apps_project', 'blog', 'static')
 STATICFILES_DIRS = (
