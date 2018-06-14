@@ -124,7 +124,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/blog/static/'
+STATIC_URL = '/blog/home/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'apps_project', 'blog', 'static')
 STATICFILES_DIRS = (
     (os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),

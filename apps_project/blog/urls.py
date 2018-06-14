@@ -5,5 +5,7 @@ from blog import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'home/', views.base),
+    url(r'^home/$', views.base, name="home"),
+    url(r'^home/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+
     ]

@@ -27,3 +27,6 @@ class MarkdownArticle(models.Model):
     article_label = models.CharField(max_length=50, null=True)
     article_title = models.CharField(max_length=50, null=True)
     article_img = models.CharField(max_length=50, null=True)
+
+class Tt(models.Model):
+    text = models.TextField()
