@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -129,13 +130,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
 
 # 静态文件配置
-STATIC_URL = '/blog/home/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'apps_project', 'blog', 'static')
-STATICFILES_DIRS = (
-    (os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
-    (os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
-    (os.path.join(STATIC_ROOT, 'img').replace('\\', '/')),
+STATIC_URL = '/blog/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = (
+#     (os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
+#     (os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
+#     (os.path.join(STATIC_ROOT, 'img').replace('\\', '/')),
+# )
+STATICFILES_DIRS= (
+    os.path.join(BASE_DIR, "static"),
 )
-
 # markdown
 MARKDOWNX_EDITOR_RESIZABLE = True

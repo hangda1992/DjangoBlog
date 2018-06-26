@@ -1,12 +1,18 @@
-from django.http import HttpResponse
-from django.utils.safestring import mark_safe
+# Create your views here.
+import json
 import markdown
+from django.http import HttpRequest,JsonResponse
 from django.shortcuts import render, get_object_or_404
 from .models import MarkdownArticle
-# Create your views here.
+from .getbloginfo import get_blog_label_info
 
 
-def base(request):
+def base_home(request):
+    """
+
+    :param request:
+    :return:
+    """
     return render(request, "home.html")
 
 
@@ -20,3 +26,16 @@ def detail(request, pk):
                                      'markdown.extensions.toc',
                                   ])
     return render(request, 'home.html', context={'post': post})
+
+
+def get_label_info(request):
+    """
+    获取所有文章的标签和数量
+    :param request:
+    :return:
+    """
+    if request.method == "POST":
+        info = []
+        info = get_blog_label_info()
+        print(info)
+        return JsonResponse({'info': info})

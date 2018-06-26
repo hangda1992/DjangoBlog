@@ -9,13 +9,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="../static/img/1.jpg" alt="First slide">
+                <img class="d-block w-100" src="/blog/static/img/1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../static/img/2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="/blog/static/img/2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../static/img/3.jpg" alt="Third slide">
+                <img class="d-block w-100" src="/blog/static/img/3.jpg" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -27,23 +27,14 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <div>
+        <span>wenzhang</span>
+    </div>
 {% endblock %}
 {% block div2 %}
     <div style="min-height: 20px"></div>
-    <div style="width:350px;">
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                python 基础
-                <span class="badge badge-primary badge-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                python web
-                <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Linux 知识
-                <span class="badge badge-primary badge-pill">1</span>
-            </li>
+    <div style="width:375px;" class="container">
+        <ul class="list-group" id="list_group">
         </ul>
     </div>
 {% endblock %}
@@ -51,3 +42,8 @@
 {% block div3 %}
     {{ post.body|safe }}
 {% endblock %}
+
+{% block div4 %}
+    <script type="text/javascript" src="/blog/static/myjs/home.js"></script>
+{% endblock %}
+
