@@ -7,7 +7,7 @@ from mdeditor.fields import MDTextField
 class BlogAccountManagement(models.Model):
     """
     记录用户的基本信息：
-    名字、
+    名字
     分配的ID
     邮箱地址
     个人博客连接

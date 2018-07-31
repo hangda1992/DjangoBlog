@@ -41,15 +41,4 @@ def get_label_info(request):
         return JsonResponse({'info': info})
 
 
-def get_label_info1(request):
-    """
-    获取所有文章的标签和数量
-    :param request:
-    :return:
-    """
-    info_list = get_blog_label_info()
-    for i in info_list:
-        info = i
-    print("11111111")
-    print(info)
-    return render(request, 'home.html', {'abc': info})
+def get_article_info(request):
