@@ -27,9 +27,29 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div>
-        <span>wenzhang</span>
-    </div>
+
+<div style="height: 15px"></div>
+<div class="card border-secondary mb-3" >
+  <div >
+{#      <span class="badge badge-light">作者</span>#}
+      <span class="badge badge-light">
+          {% for k,v in abc.items  %}
+              <div>
+              {{ k }}
+              </div>
+          {% endfor %}
+
+      </span>
+  </div>
+  <div class="card-body text-secondary">
+    <p class="card-text">
+        {{ post.body|safe }}
+    </p>
+  </div>
+</div>
+
+
+
 {% endblock %}
 {% block div2 %}
     <div style="min-height: 20px"></div>
@@ -40,7 +60,7 @@
 {% endblock %}
 
 {% block div3 %}
-    {{ post.body|safe }}
+
 {% endblock %}
 
 {% block div4 %}

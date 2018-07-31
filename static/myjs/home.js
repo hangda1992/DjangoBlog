@@ -42,4 +42,4 @@ var methodsFun = {
         }
         return label_list;
     }
-}
+};

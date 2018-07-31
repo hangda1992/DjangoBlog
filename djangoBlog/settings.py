@@ -86,6 +86,8 @@ DATABASES = {
         'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+        'CHARSET': 'utf8',
+        'COLLATION': 'utf8_general_ci'
     }
 }
 
@@ -122,6 +124,8 @@ USE_L10N = True
 
 USE_TZ = False
 
+# markdown
+MARKDOWNX_EDITOR_RESIZABLE = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -131,14 +135,12 @@ MEDIA_URL = '/media/'
 
 # 静态文件配置
 STATIC_URL = '/blog/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '')
 # STATICFILES_DIRS = (
 #     (os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
 #     (os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
 #     (os.path.join(STATIC_ROOT, 'img').replace('\\', '/')),
 # )
-STATICFILES_DIRS= (
-    os.path.join(BASE_DIR, "static"),
+STATICFILES_DIRS = (
+    os.path.join(STATIC_ROOT, "static"),
 )
-# markdown
-MARKDOWNX_EDITOR_RESIZABLE = True

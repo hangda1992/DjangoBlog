@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^home/$', views.base_home, name="base_home"),
     url(r'^home/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     url(r'^home/get_label$', views.get_label_info, name='get_label_info'),
-
+    url(r'^home/get_label1$', views.get_label_info1, name='get_label_info1'),
     ]
