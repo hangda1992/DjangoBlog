@@ -4,7 +4,7 @@ import markdown
 from django.http import HttpRequest,JsonResponse
 from django.shortcuts import render, get_object_or_404
 from .models import MarkdownArticle
-from .getbloginfo import get_blog_label_info
+from .getbloginfo import GetBlogInfo
 
 
 def base_home(request):
@@ -24,21 +24,60 @@ def detail(request, pk):
                                      'markdown.extensions.extra',
                                      'markdown.extensions.codehilite',
                                      'markdown.extensions.toc',
+                                     'markdown.extensions.tables'
                                   ])
     return render(request, 'home.html', context={'post': post})
 
 
-def get_label_info(request):
+def get_article_info(request):
     """
-    获取所有文章的标签和数量
+    获取所有文章的信息
     :param request:
     :return:
     """
-    if request.method == "POST":
-        info = []
-        info = get_blog_label_info()
-        print(info)
-        return JsonResponse({'info': info})
+    info = {
+        'status': 400,
+        'data': ['']
+    }
+    if request.method == "GET":
+        try:
+            blog = GetBlogInfo()
+            info['data'] = blog.get_article_msg()
+            for blog_info in info['data']:
+
+                a = blog_info['article_content']
+                a = ''.join(a)
+                a = markdown.markdown(a,
+                                      extensions=[
+                                          'markdown.extensions.extra',
+                                          'markdown.extensions.codehilite',
+                                          'markdown.extensions.toc',
+                                      ])
+
+                blog_info['article_content'] = a
+            info['status'] = 200
+        except Exception as e:
+            print(e)
+
+    return JsonResponse(info)
 
 
-def get_article_info(request):
+def get_label_info(request):
+    """
+    获取博客文章分类
+    :param request:
+    :return:
+    """
+    info = {
+        'status': 400,
+        'data': []
+    }
+    if request.method == 'GET':
+        try:
+            blog = GetBlogInfo()
+            info['data'] = blog.get_classification()
+            info['status'] = 200
+        except Exception as e:
+            print(e)
+
+    return JsonResponse(info)

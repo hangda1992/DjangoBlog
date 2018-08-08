@@ -19,5 +19,5 @@ class ExampleModelAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': MDEditorWidget}
     }
-    list_display = ('article_time_c', 'article_time_u', 'article_label',
+    list_display = ('article_time_c', 'article_time_u', 'article_classification',
                     'article_title', 'article_img', 'article_content')

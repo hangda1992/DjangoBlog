@@ -24,14 +24,15 @@ class MarkdownArticle(models.Model):
     markdown文件存入改数据库
     article_time_c 创建时间
     article_time_u 修改时间
-    article_label 文章标签
+    article_classification 文章分类
     article_title 文章标题
     article_img 文章展示图片路径和名称
     article_content 文章内容
     """
     article_time_c = models.DateField(auto_now_add=True, null=True)
     article_time_u = models.DateField(auto_now=True, null=True)
-    article_label = models.CharField(max_length=50, null=True)
+    # article_label = models.CharField(max_length=50, null=True)
+    article_classification = models.CharField(max_length=50, null=True)
     article_title = models.CharField(max_length=50, null=True)
     article_img = models.CharField(max_length=50, null=True)
     article_content = MDTextField(null=True)
